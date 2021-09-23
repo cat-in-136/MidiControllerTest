@@ -1,5 +1,6 @@
 package io.github.cat_in_136.android.midicontrollertest
 
+import android.app.Activity
 import android.content.Context
 import android.media.midi.MidiDeviceInfo
 import android.media.midi.MidiInputPort
@@ -7,7 +8,7 @@ import android.media.midi.MidiManager
 import android.os.Handler
 import android.os.Looper
 
-class MidiConnection(activity: MainActivity) {
+class MidiConnection(activity: Activity) {
     private val midiManager = activity.applicationContext.getSystemService(Context.MIDI_SERVICE) as MidiManager
 
     private var inputPort: MidiInputPort? = null
