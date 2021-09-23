@@ -48,6 +48,11 @@ class PadFragment : Fragment() {
                 val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
                 viewModel.midiConnection?.sendNoteOn(0, noteNumber.toByte(), 127)
             }
+            btn.setOnLongClickListener {
+                val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+                viewModel.midiConnection?.sendNoteOff(0, noteNumber.toByte(), 127)
+                true
+            }
         }
     }
 
