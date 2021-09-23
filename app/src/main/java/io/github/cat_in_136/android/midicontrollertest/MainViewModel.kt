@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
     var midiConnection: MidiConnection? = null
-        private set;
+        private set
 
     fun connectMidi(activity: Activity) {
         midiConnection = MidiConnection(activity)
@@ -19,7 +19,7 @@ class MainViewModel : ViewModel() {
             val deviceInfo = midiConnection!!.deviceInfo
             if (deviceInfo.isNotEmpty()) {
                 val deviceName = deviceInfo[0].properties.getString(MidiDeviceInfo.PROPERTY_NAME)
-                textViewDevice.text = "⁉️ $deviceName"
+                textViewDevice.text = String.format(activity.getString(R.string.device_failed_load), deviceName);
                 midiConnection!!.openDevice(deviceInfo[0]) {
                     if (midiConnection!!.deviceOpened) {
                         textViewDevice.text = deviceName
