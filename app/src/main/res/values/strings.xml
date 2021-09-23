@@ -4,4 +4,20 @@
     <string name="device_seeking_or_error">🤔</string>
     <string name="device_failed_load">⁉️ %1$s</string>
     <string name="panel_pad">Pad</string>
+    <string name="pad_btn_1">C2</string>
+    <string name="pad_btn_2">C#2</string>
+    <string name="pad_btn_3">D2</string>
+    <string name="pad_btn_4">D#2</string>
+    <string name="pad_btn_5">E2</string>
+    <string name="pad_btn_6">F2</string>
+    <string name="pad_btn_7">F#2</string>
+    <string name="pad_btn_8">G2</string>
+    <string name="pad_btn_9">G#2</string>
+    <string name="pad_btn_10">A2</string>
+    <string name="pad_btn_11">A#2</string>
+    <string name="pad_btn_12">B2</string>
+    <string name="pad_btn_13">C3</string>
+    <string name="pad_btn_14">C#3</string>
+    <string name="pad_btn_15">D3</string>
+    <string name="pad_btn_16">D#3</string>
 </resources>

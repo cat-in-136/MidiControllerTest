@@ -42,9 +42,11 @@ class PadFragment : Fragment() {
             R.id.button15,
             R.id.button16
         ).forEachIndexed { index, btn_id ->
-            val noteNumber = 36 + index
             val btn = view.findViewById<Button>(btn_id)
-            btn!!.setOnClickListener {
+            val label = btn!!.text
+            val noteNumber = MidiConnection.indexOctaveToNoteNumber(label)
+
+            btn.setOnClickListener {
                 val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
                 viewModel.midiConnection?.sendNoteOn(0, noteNumber.toByte(), 127)
             }
