@@ -20,12 +20,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
+        ViewModelProvider(this).get(MainViewModel::class.java)
+
         val viewPager = findViewById<ViewPager2>(R.id.view_pager)
+        viewPager.isUserInputEnabled = false
         val pagerFragments = arrayOf(
             Pair(R.string.panel_pad, PadFragment())
         )
-
-        ViewModelProvider(this).get(MainViewModel::class.java)
         viewPager.adapter = object : FragmentStateAdapter(this) {
             override fun getItemCount(): Int = pagerFragments.size
 
