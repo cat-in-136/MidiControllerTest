@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MidiControllerTest</string>
+    <string name="quit_app">Quit App</string>
+    <string name="device_seeking_or_error">🤔</string>
+</resources>
