@@ -14,37 +14,37 @@
             app:flChildSpacing="auto"
             app:flChildSpacingForLastRow="align"
             app:flRowSpacing="8dp" android:id="@+id/flowLayout">
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button1" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn1" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_1"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button2" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn2" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_2"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button3" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn3" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_3"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button4" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn4" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_4"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button5" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn5" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_5"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button6" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn6" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_6"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button7" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn7" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_7"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button8" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn8" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_8"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button9" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn9" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_9"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button10" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn10" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_10"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button11" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn11" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_11"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button12" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn12" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_12"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button13" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn13" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_13"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button14" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn14" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_14"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button15" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn15" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_15"/>
-        <androidx.appcompat.widget.AppCompatButton android:id="@+id/button16" android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/pad_btn16" android:layout_width="wrap_content"
                                                    android:layout_height="64sp" android:text="@string/pad_btn_16"/>
     </com.nex3z.flowlayout.FlowLayout>
 

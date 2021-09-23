@@ -28,7 +28,7 @@ class PadFragment : Fragment() {
 
         val packageName = requireActivity().packageName
         for (i in 0..15) {
-            val btn_id = resources.getIdentifier("button${i + 1}", "id", packageName)
+            val btn_id = resources.getIdentifier("pad_btn${i + 1}", "id", packageName)
             val btn = view.findViewById<Button>(btn_id)
             val label = btn!!.text
             val noteNumber = MidiConnection.indexOctaveToNoteNumber(label)
