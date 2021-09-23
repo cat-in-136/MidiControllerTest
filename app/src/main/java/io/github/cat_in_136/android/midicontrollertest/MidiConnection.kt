@@ -8,6 +8,7 @@ import android.media.midi.MidiManager
 import android.os.Handler
 import android.os.Looper
 
+
 class MidiConnection(activity: Activity) {
     private val midiManager = activity.applicationContext.getSystemService(Context.MIDI_SERVICE) as MidiManager
 
@@ -67,27 +68,36 @@ class MidiConnection(activity: Activity) {
         sendMidiCommand(array, 0, array.size)
     }
 
-    /** Combinience method to send note-on
+    /** Combinience method to send channel voice message
      *
-     * @param channel       the channel number 0-15
-     * @param noteNumber    the note number 0-127
-     * @param velocity      the velocity 0-127
+     * @param status    the status number
+     * @param channel   the channel number 0-15
+     * @param data1     the 1st data byte or null if absent
+     * @param data2     the 2nd data byte or null if absent
      */
-    fun sendNoteOn(channel: Byte, noteNumber: Byte, velocity: Byte) {
-        sendFixedLengthMidiCommand((0x90 + channel).toUByte(), noteNumber.toUByte(), velocity.toUByte())
-    }
-
-    /** Combinience method to send note-off
-     *
-     * @param channel       the channel number 0-15
-     * @param noteNumber    the note number 0-127
-     * @param velocity      the velocity 0-127
-     */
-    fun sendNoteOff(channel: Byte, noteNumber: Byte, velocity: Byte) {
-        sendFixedLengthMidiCommand((0x80 + channel).toUByte(), noteNumber.toUByte(), velocity.toUByte())
+    fun sendChannelVoice(status: Int, channel: Int, data1: Int?, data2: Int?) {
+        val statusByte = (status and 0xF0) or (channel and 0x0F)
+        val dataByte1: UByte? = data1?.toUByte()
+        val dataByte2: UByte? = data2?.toUByte()
+        sendFixedLengthMidiCommand(statusByte.toUByte(), dataByte1, dataByte2)
     }
 
     companion object {
+        /** Note off status */
+        const val NOTE_OFF_STATUS: Int = 0x80
+        /** Note on status */
+        const val NOTE_ON_STATUS: Int = 0x90
+        /** After touch status */
+        const val AFTER_TOUCH_STATUS: Int = 0xA0
+        /** Control change status */
+        const val CONTROL_CHANGE_STATUS: Int = 0xB0
+        /** Program change status */
+        const val PROGRAM_CHANGE_STATUS: Int = 0xC0
+        /** After touch (channel pressure) status */
+        const val CHANNEL_PRESSURE_STATUS: Int = 0xD0
+        /** Pitch Bend status */
+        const val PITCH_BEND_STATUS: Int = 0xE0
+
         private val noteString = arrayOf("C","C#","D","D#","E","F","F#","G","G#","A","A#","B")
 
         /** Convert function from noteNumber to index string and octave */

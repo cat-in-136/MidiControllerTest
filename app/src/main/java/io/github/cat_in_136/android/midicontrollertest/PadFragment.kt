@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.SeekBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 
@@ -33,13 +35,37 @@ class PadFragment : Fragment() {
 
             btn.setOnClickListener {
                 val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-                viewModel.midiConnection?.sendNoteOn(0, noteNumber.toByte(), 127)
+                viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_ON_STATUS, 0, noteNumber, 127)
             }
             btn.setOnLongClickListener {
                 val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-                viewModel.midiConnection?.sendNoteOff(0, noteNumber.toByte(), 127)
+                viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_OFF_STATUS, 0, noteNumber, 127)
                 true
             }
+        }
+        for (i in 0..7) {
+            val seekbar_id = resources.getIdentifier("pad_seekbar${i + 1}", "id", packageName)
+            val seekbar = view.findViewById<SeekBar>(seekbar_id)
+            val seekbar_value_textview_id = resources.getIdentifier("pad_seekbar_value_textview${i + 1}", "id", packageName)
+            val seekbar_value_textview = view.findViewById<TextView>(seekbar_value_textview_id)
+
+            val controlNumber = i
+            seekbar_value_textview.text = seekbar.progress.toString()
+
+            seekbar!!.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                    seekbar_value_textview.text = progress.toString()
+
+                    val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+                    viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_OFF_STATUS, 0, controlNumber, progress)
+                }
+
+                override fun onStartTrackingTouch(seekBar: SeekBar) {
+                }
+
+                override fun onStopTrackingTouch(seekBar: SeekBar) {
+                }
+            })
         }
     }
 

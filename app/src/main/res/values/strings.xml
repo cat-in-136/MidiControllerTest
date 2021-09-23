@@ -20,4 +20,12 @@
     <string name="pad_btn_14">C#3</string>
     <string name="pad_btn_15">D3</string>
     <string name="pad_btn_16">D#3</string>
+    <string name="pad_seekbar_1">1</string>
+    <string name="pad_seekbar_2">2</string>
+    <string name="pad_seekbar_3">3</string>
+    <string name="pad_seekbar_4">4</string>
+    <string name="pad_seekbar_5">5</string>
+    <string name="pad_seekbar_6">6</string>
+    <string name="pad_seekbar_7">7</string>
+    <string name="pad_seekbar_8">8</string>
 </resources>
