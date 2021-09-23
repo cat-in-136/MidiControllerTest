@@ -1,9 +1,7 @@
 package io.github.cat_in_136.android.midicontrollertest
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -11,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,19 +20,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-        ViewModelProvider(this).get(MainViewModel::class.java)
-        findViewById<ViewPager2>(R.id.view_pager).adapter = object : FragmentStateAdapter(this) {
-            private val fragments = arrayOf<Fragment>(
-                PadFragment()
-            )
+        val viewPager = findViewById<ViewPager2>(R.id.view_pager)
+        val pagerFragments = arrayOf(
+            Pair(R.string.panel_pad, PadFragment())
+        )
 
-            override fun getItemCount(): Int = fragments.size
+        ViewModelProvider(this).get(MainViewModel::class.java)
+        viewPager.adapter = object : FragmentStateAdapter(this) {
+            override fun getItemCount(): Int = pagerFragments.size
 
             override fun createFragment(position: Int): Fragment {
-                return fragments[position]
+                return pagerFragments[position].second
             }
         }
-        println("onCreate()")
+        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = getString(pagerFragments[position].first)
+        }.attach()
+
     }
 
     override fun onStart() {
