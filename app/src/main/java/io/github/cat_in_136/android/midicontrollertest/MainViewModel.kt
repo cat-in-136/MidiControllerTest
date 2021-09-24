@@ -4,25 +4,25 @@ import android.app.Activity
 import android.media.midi.MidiDeviceInfo
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
     var midiConnection: MidiConnection? = null
         private set
 
-    fun connectMidi(activity: Activity) {
+    fun connectMidi(activity: AppCompatActivity) {
         midiConnection = MidiConnection(activity)
+        val toolbar = activity.supportActionBar!!
 
         if (midiConnection != null) {
-            val textViewDevice = activity.findViewById<TextView>(R.id.text_view_device)
-
             val deviceInfo = midiConnection!!.deviceInfo
             if (deviceInfo.isNotEmpty()) {
                 val deviceName = deviceInfo[0].properties.getString(MidiDeviceInfo.PROPERTY_NAME)
-                textViewDevice.text = String.format(activity.getString(R.string.device_failed_load), deviceName);
+                toolbar.subtitle = String.format(activity.getString(R.string.device_failed_load), deviceName)
                 midiConnection!!.openDevice(deviceInfo[0]) {
                     if (midiConnection!!.deviceOpened) {
-                        textViewDevice.text = deviceName
+                        toolbar.subtitle = deviceName
                         Toast.makeText(
                             activity, "Successfully opened $deviceName",
                             Toast.LENGTH_SHORT
