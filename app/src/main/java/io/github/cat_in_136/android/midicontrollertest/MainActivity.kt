@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         ViewModelProvider(this).get(MainViewModel::class.java)
+
+        setSupportActionBar(findViewById<Toolbar>(R.id.toolbar))
 
         val viewPager = findViewById<ViewPager2>(R.id.view_pager)
         viewPager.isUserInputEnabled = false
