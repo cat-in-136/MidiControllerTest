@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/kbd_horizontal_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".KbdFragment">
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <!--
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:layout_marginStart="24dp">
+<% -1.upto(9) do |octave|
+  [1, 3, -1, 6, 8, 10, -1].each do |i|
+    note_number = octave * 12 + i + 12
+    break if note_number > 127 %>
+            <androidx.appcompat.widget.AppCompatButton
+<% if i < 0 %>
+                    android:visibility="invisible"
+<% else %>
+                    android:id="@+id/kbd_btn<%= note_number %>"
+<% end %>
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+<%   end
+end %>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+<% -1.upto(9) do |octave|
+  [0, 2, 4, 5, 7, 9, 11].each do |i|
+    note_number = octave * 12 + i + 12
+    break if note_number > 127 %>
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn<%= note_number %>"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+<%   end
+end %>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        -->
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:layout_marginStart="24dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn1"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn3"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn6"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn8"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn10"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn13"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn15"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn18"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn20"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn22"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn25"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn27"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn30"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn32"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn34"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn37"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn39"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn42"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn44"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn46"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn49"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn51"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn54"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn56"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn58"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn61"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn63"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn66"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn68"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn70"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn73"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn75"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn78"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn80"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn82"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn85"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn87"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn90"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn92"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn94"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn97"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn99"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn102"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn104"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn106"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn109"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn111"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn114"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn116"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn118"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn121"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn123"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:visibility="invisible"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/kbd_btn126"
+
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn0"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn2"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn4"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn5"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn7"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn9"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn11"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn12"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn14"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn16"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn17"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn19"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn21"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn23"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn24"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn26"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn28"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn29"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn31"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn33"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn35"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn36"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn38"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn40"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn41"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn43"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn45"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn47"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn48"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn50"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn52"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn53"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn55"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn57"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn59"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn60"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn62"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn64"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn65"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn67"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn69"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn71"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn72"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn74"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn76"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn77"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn79"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn81"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn83"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn84"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn86"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn88"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn89"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn91"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn93"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn95"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn96"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn98"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn100"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn101"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn103"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn105"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn107"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn108"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn110"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn112"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn113"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn115"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn117"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn119"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn120"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn122"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn124"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn125"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/kbd_btn127"
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</HorizontalScrollView>

@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
         val viewPager = findViewById<ViewPager2>(R.id.view_pager)
         viewPager.isUserInputEnabled = false
         val pagerFragments = arrayOf(
-            Pair(R.string.panel_pad, PadFragment())
+            Pair(R.string.panel_pad, PadFragment()),
+            Pair(R.string.panel_kbd, KbdFragment()),
         )
         viewPager.adapter = object : FragmentStateAdapter(this) {
             override fun getItemCount(): Int = pagerFragments.size

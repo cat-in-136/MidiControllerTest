@@ -28,4 +28,5 @@
     <string name="pad_seekbar_6">6</string>
     <string name="pad_seekbar_7">7</string>
     <string name="pad_seekbar_8">8</string>
+    <string name="panel_kbd">Kbd</string>
 </resources>
