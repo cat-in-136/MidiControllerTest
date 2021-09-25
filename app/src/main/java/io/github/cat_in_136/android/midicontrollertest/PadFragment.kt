@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 
 
-class PadFragment : Fragment() {
+class PadFragment : Fragment(), View.OnClickListener, View.OnLongClickListener, SeekBar.OnSeekBarChangeListener {
 
 
     override fun onCreateView(
@@ -28,46 +28,61 @@ class PadFragment : Fragment() {
 
         val packageName = requireActivity().packageName
         for (i in 0..15) {
-            val btn_id = resources.getIdentifier("pad_btn${i + 1}", "id", packageName)
-            val btn = view.findViewById<Button>(btn_id)
+            val btnId = resources.getIdentifier("pad_btn${i + 1}", "id", packageName)
+            val btn = view.findViewById<Button>(btnId)
             val label = btn!!.text
             val noteNumber = MidiConnection.indexOctaveToNoteNumber(label)
+            btn.tag = noteNumber
 
-            btn.setOnClickListener {
-                val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-                viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_ON_STATUS, 0, noteNumber, 127)
-            }
-            btn.setOnLongClickListener {
-                val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-                viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_OFF_STATUS, 0, noteNumber, 127)
-                true
-            }
+            btn.setOnClickListener(this)
+            btn.setOnLongClickListener(this)
         }
         for (i in 0..7) {
-            val seekbar_id = resources.getIdentifier("pad_seekbar${i + 1}", "id", packageName)
-            val seekbar = view.findViewById<SeekBar>(seekbar_id)
-            val seekbar_value_textview_id = resources.getIdentifier("pad_seekbar_value_textview${i + 1}", "id", packageName)
-            val seekbar_value_textview = view.findViewById<TextView>(seekbar_value_textview_id)
+            val seekbarId = resources.getIdentifier("pad_seekbar${i + 1}", "id", packageName)
+            val seekbar = view.findViewById<SeekBar>(seekbarId)
+            seekbar!!.tag = i
 
-            val controlNumber = i
-            seekbar_value_textview.text = seekbar.progress.toString()
+            val seekbarValueTextviewId =
+                resources.getIdentifier("pad_seekbar_value_textview${i + 1}", "id", packageName)
+            val seekbarValueTextview = view.findViewById<TextView>(seekbarValueTextviewId)
+            seekbarValueTextview.text = seekbar.progress.toString()
 
-            seekbar!!.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                    seekbar_value_textview.text = progress.toString()
-
-                    val viewModel : MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-                    viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_OFF_STATUS, 0, controlNumber, progress)
-                }
-
-                override fun onStartTrackingTouch(seekBar: SeekBar) {
-                }
-
-                override fun onStopTrackingTouch(seekBar: SeekBar) {
-                }
-            })
+            seekbar.setOnSeekBarChangeListener(this)
         }
     }
+
+    override fun onClick(view: View) {
+        (view.tag as? Int)?.also { noteNumber ->
+            val viewModel: MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+            viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_ON_STATUS, 0, noteNumber, 127)
+        }
+    }
+
+    override fun onLongClick(view: View): Boolean {
+        (view.tag as? Int)?.also { noteNumber ->
+            val viewModel: MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+            viewModel.midiConnection?.sendChannelVoice(MidiConnection.NOTE_ON_STATUS, 0, noteNumber, 127)
+            return true
+        }
+        return false
+    }
+
+    override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+        (seekBar.tag as? Int)?.also { i ->
+            val viewModel: MainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+            viewModel.midiConnection?.sendChannelVoice(MidiConnection.CONTROL_CHANGE_STATUS, 0, i, progress)
+
+            val packageName = requireActivity().packageName
+            val seekbarValueTextviewId =
+                resources.getIdentifier("pad_seekbar_value_textview${i + 1}", "id", packageName)
+            val seekbarValueTextview = requireActivity().findViewById<TextView>(seekbarValueTextviewId)
+            seekbarValueTextview.text = seekBar.progress.toString()
+        }
+    }
+
+    override fun onStartTrackingTouch(seekBar: SeekBar) = Unit
+
+    override fun onStopTrackingTouch(seekBar: SeekBar) = Unit
 
     companion object {
         @JvmStatic
