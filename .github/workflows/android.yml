@@ -13,8 +13,18 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+    - name: Run Unit Test
+      run: ./gradlew testDebug
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew assembleDebug
 
   android:
     runs-on: macos-latest
