@@ -46,9 +46,7 @@ jobs:
       run: |
         echo ${GITHUB_REF/refs\/tags\/v/}
         echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
-    - name: Create a Debian Package
-      run: cargo deb
-    - name: Upload a Debian Package to the Release Assets
+    - name: Upload the app to the Release Assets
       uses: actions/upload-release-asset@latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
